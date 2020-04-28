@@ -64,15 +64,8 @@
 (use-package nlinum
   :ensure t)
 
-(use-package vterm
-  :ensure t)
-
 (use-package julia-mode
   :ensure t)
-
-(use-package julia-snail
-  :ensure t
-  :hook (julia-mode . julia-snail-mode))
 
 (use-package spaceline
   :ensure t
@@ -81,6 +74,8 @@
 (use-package ace-window
   :ensure t
   :init (global-set-key [remap other-window] 'ace-window))
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
