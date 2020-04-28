@@ -12,10 +12,6 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; winner mode and windmove bindings
-(winner-mode t)
-(windmove-default-keybindings)
-
 ;; disable trunc words
 (setq word-wrap t)
 
@@ -82,7 +78,9 @@
   :ensure t
   :config (spaceline-emacs-theme))
 
-
+(use-package ace-window
+  :ensure t
+  :init (global-set-key [remap other-window] 'ace-window))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -90,7 +88,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (spaceline spaceline-config which-key websocket use-package try spacemacs-theme request polymode nlinum julia-snail deferred anaphora anaconda-mode))))
+    (ace-window spaceline spaceline-config which-key websocket use-package try spacemacs-theme request polymode nlinum julia-snail deferred anaphora anaconda-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
