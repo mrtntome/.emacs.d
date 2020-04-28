@@ -7,9 +7,6 @@
 ;; disable scratch message
 (setq initial-scratch-message "")
 
-;; start maximized
-(toggle-frame-maximized)
-
 ;; disable toolbar, menubar and scrollbar
 (tool-bar-mode -1)
 (menu-bar-mode -1)
