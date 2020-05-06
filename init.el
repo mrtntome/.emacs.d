@@ -55,15 +55,6 @@
   :defer t
   :init (load-theme 'spacemacs-dark t))
 
-(use-package anaconda-mode
-  :ensure t
-  :hook ((python-mode . anaconda-mode)
-	 (python-mode . anaconda-eldoc-mode))
-  :config (setq ein:output-area-inlined-images t))
-
-(use-package nlinum
-  :ensure t)
-
 (use-package julia-mode
   :ensure t)
 
@@ -74,19 +65,3 @@
 (use-package ace-window
   :ensure t
   :init (global-set-key [remap other-window] 'ace-window))
-
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (ace-window spaceline spaceline-config which-key websocket use-package try spacemacs-theme request polymode nlinum julia-snail deferred anaphora anaconda-mode))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
