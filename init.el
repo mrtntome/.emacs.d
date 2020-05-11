@@ -65,3 +65,23 @@
 (use-package ace-window
   :ensure t
   :init (global-set-key [remap other-window] 'ace-window))
+
+(use-package pdf-tools
+  :ensure t)
+
+(pdf-loader-install)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (pdf-tools which-key use-package try spacemacs-theme spaceline nlinum julia-snail anaconda-mode ace-window))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
