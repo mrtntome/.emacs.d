@@ -7,21 +7,12 @@
 ;; disable scratch message
 (setq initial-scratch-message "")
 
-;; disable toolbar, menubar and scrollbar
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
 
 ;; disable trunc words
 (setq word-wrap t)
 
 ;; use ibuffer instead of buffer-menu
 (defalias 'list-buffers 'ibuffer)
-
-;; use ido-mode
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
 
 ;; add melpa and package manager init
 (require 'package)
@@ -50,17 +41,8 @@
   :ensure t
   :config (which-key-mode))
 
-(use-package spacemacs-theme
-  :ensure t
-  :defer t
-  :init (load-theme 'spacemacs-dark t))
-
 (use-package julia-mode
   :ensure t)
-
-(use-package spaceline
-  :ensure t
-  :config (spaceline-emacs-theme))
 
 (use-package ace-window
   :ensure t
@@ -87,6 +69,41 @@
 	org-ref-default-bibliography '("~/Documents/biblio/refs.bib")
 	org-ref-pdf-directory "~/Documents/biblio/pdfs/"))
 
+(use-package counsel
+  :ensure t)
+
+(use-package swiper
+  :ensure t)
+
+(use-package ivy
+  :ensure t
+  :config
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) "))
+
+(ivy-mode 1)
+
+
+(use-package doom-themes
+  :ensure t
+  :config
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
+  (load-theme 'doom-one t)
+  (doom-themes-org-config))
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
+
+(use-package smartparens
+  :ensure t)
+
+;; disable toolbar, menubar and scrollbar
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -94,7 +111,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (auctex org-ref which-key use-package try spacemacs-theme spaceline pdf-tools org-bullets nlinum julia-mode exec-path-from-shell anaconda-mode ace-window))))
+    (counsel smartparens doom-themes org-ref auctex org-bullets pdf-tools ace-window spaceline julia-mode spacemacs-theme which-key try use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
