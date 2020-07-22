@@ -102,7 +102,32 @@
 (use-package magit
   :ensure t)
 
-;; disable toolbar, menubar and scrollbar
-(tool-bar-mode -1)
-(menu-bar-mode -1)
+(use-package ox-hugo
+  :ensure t
+  :after ox)
+
+(use-package yaml-mode
+  :ensure t)
+
+
+(menu-bar-mode 1)
 (scroll-bar-mode -1)
+(tool-bar-mode -1)
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (yaml-mode ox-hugo which-key use-package try spacemacs-theme spaceline smartparens org-ref org-bullets magit julia-mode doom-themes doom-modeline counsel auctex ace-window))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
