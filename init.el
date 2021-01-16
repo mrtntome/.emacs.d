@@ -41,48 +41,14 @@
   :ensure t
   :config (which-key-mode))
 
-(use-package julia-mode
-  :ensure t)
-
 (use-package ace-window
   :ensure t
   :init (global-set-key [remap other-window] 'ace-window))
 
-(use-package pdf-tools
-  :ensure t)
-
-(pdf-loader-install)
 
 (use-package org-bullets
   :ensure t
   :hook (org-mode . org-bullets-mode))
-
-(use-package auctex
-  :ensure t
-  :defer t)
-
-(use-package org-ref
-  :ensure t
-  :config
-  (setq reftex-default-bibliography '("~/Documents/biblio/refs.bib"))
-  (setq org-ref-bibliography-notes "~/Documents/biblio/notes.org"
-	org-ref-default-bibliography '("~/Documents/biblio/refs.bib")
-	org-ref-pdf-directory "~/Documents/biblio/pdfs/"))
-
-(use-package counsel
-  :ensure t)
-
-(use-package swiper
-  :ensure t)
-
-(use-package ivy
-  :ensure t
-  :config
-  (setq ivy-use-virtual-buffers t)
-  (setq ivy-count-format "(%d/%d) "))
-
-(ivy-mode 1)
-
 
 (use-package doom-themes
   :ensure t
@@ -99,9 +65,6 @@
 (use-package smartparens
   :ensure t)
 
-(use-package magit
-  :ensure t)
-
 (use-package ox-hugo
   :ensure t
   :after ox)
@@ -113,21 +76,3 @@
 (menu-bar-mode 1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (yaml-mode ox-hugo which-key use-package try spacemacs-theme spaceline smartparens org-ref org-bullets magit julia-mode doom-themes doom-modeline counsel auctex ace-window))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
