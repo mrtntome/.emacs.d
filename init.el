@@ -1,30 +1,25 @@
-;; disable splash-screen
+;; Clean Look
+(menu-bar-mode -1)
+(tool-bar-mode 1)
+(tooltip-mode -1)
+(scroll-bar-mode -1)
+(fringe-mode 10)
+
+;; Clean Startup
 (setq inhibit-startup-screen t)
-
-;; disable echo-area-message
 (setq inhibit-startup-echo-area-message "martin")
-
-;; disable scratch message
 (setq initial-scratch-message "")
 
+;; Set Default Font
+(set-face-attribute 'default nil
+                    :family "Source Code Pro"
+                    :height 110
+                    :weight 'normal
+                    :width 'normal)
 
-;; disable trunc words
+;; Quality of Life Improvements
 (setq word-wrap t)
-
-;; use ibuffer instead of buffer-menu
-(defalias 'list-buffers 'ibuffer)
-
-;; add melpa and package manager init
-(require 'package)
-(setq package-enable-at-startup nil)
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-
-;; install and require use-package
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 ;; store all backup and autosave files in /tmp
 (setq backup-directory-alist
@@ -32,6 +27,20 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 (setq backup-by-copying t)
+
+;; use ibuffer instead of buffer-menu
+(defalias 'list-buffers 'ibuffer)
+
+;; Package Manager
+(require 'package)
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("org" . "https://orgmode.org/elpa/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+(require 'use-package)
+(setq use-package-always-ensure t)
 
 ;; packages
 (use-package try
@@ -71,8 +80,3 @@
 
 (use-package yaml-mode
   :ensure t)
-
-
-(menu-bar-mode 1)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
