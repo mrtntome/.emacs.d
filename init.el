@@ -1,6 +1,6 @@
 ;; Clean Look
 (menu-bar-mode -1)
-(tool-bar-mode 1)
+(tool-bar-mode -1)
 (tooltip-mode -1)
 (scroll-bar-mode -1)
 (fringe-mode 10)
@@ -18,8 +18,27 @@
                     :width 'normal)
 
 ;; Quality of Life Improvements
+(column-number-mode)
 (setq word-wrap t)
+(setq initial-major-mode 'org-mode)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+;; Line Numbers
+(require 'display-line-numbers)
+(defcustom display-line-numbers-exempt-modes '(org-mode vterm-mode eshell-mode shell-mode term-mode ansi-term-mode)
+  "Major modes on which to disable line numbers"
+  :group 'display-line-numbers
+  :type 'list
+  :version "green")
+
+(defun display-line-numbers--turn-on ()
+  "Turn on line numbers except on major modes defined in `display-line-numbers-exempt-modes'"
+  (if (and
+       (not (member major-mode display-line-numbers-exempt-modes))
+       (not (minibufferp)))
+      (display-line-numbers-mode)))
+
+(global-display-line-numbers-mode)
 
 ;; store all backup and autosave files in /tmp
 (setq backup-directory-alist
@@ -54,7 +73,6 @@
   :ensure t
   :init (global-set-key [remap other-window] 'ace-window))
 
-
 (use-package org-bullets
   :ensure t
   :hook (org-mode . org-bullets-mode))
@@ -80,3 +98,24 @@
 
 (use-package yaml-mode
   :ensure t)
+
+(use-package vterm
+  :ensure t)
+
+(use-package rainbow-delimiters
+  :ensure t
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(rainbow-delimiters vterm yaml-mode which-key use-package try smartparens ox-hugo org-bullets doom-themes doom-modeline ace-window)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
