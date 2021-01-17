@@ -22,6 +22,8 @@
 (setq word-wrap t)
 (setq initial-major-mode 'org-mode)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+(setq custom-file (concat user-emacs-directory "/custom.el"))
+(load-file custom-file)
 
 ;; Line Numbers
 (require 'display-line-numbers)
@@ -37,7 +39,6 @@
        (not (member major-mode display-line-numbers-exempt-modes))
        (not (minibufferp)))
       (display-line-numbers-mode)))
-
 (global-display-line-numbers-mode)
 
 ;; store all backup and autosave files in /tmp
@@ -105,17 +106,3 @@
 (use-package rainbow-delimiters
   :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(rainbow-delimiters vterm yaml-mode which-key use-package try smartparens ox-hugo org-bullets doom-themes doom-modeline ace-window)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
