@@ -78,6 +78,13 @@
   :ensure t
   :hook (org-mode . org-bullets-mode))
 
+(use-package all-the-icons
+  :ensure t)
+
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode))
+
 (use-package doom-themes
   :ensure t
   :config
@@ -85,10 +92,6 @@
         doom-themes-enable-italic t)
   (load-theme 'doom-one t)
   (doom-themes-org-config))
-
-(use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1))
 
 (use-package smartparens
   :ensure t)
