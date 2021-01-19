@@ -40,3 +40,4 @@ var/pcache/
 flycheck_init.el
 anaconda-mode/
 custom.el
+recentf
