@@ -89,12 +89,13 @@
   :ensure t
   :config
   (setq doom-themes-enable-bold t
-        doom-themes-enable-italic t)
+	doom-themes-enable-italic t)
   (load-theme 'doom-one t)
   (doom-themes-org-config))
 
 (use-package smartparens
-  :ensure t)
+  :ensure t
+  :hook (prog-mode . smartparens-mode))
 
 (use-package ox-hugo
   :ensure t
@@ -109,3 +110,18 @@
 (use-package rainbow-delimiters
   :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package ivy
+  :ensure t
+  :bind ("C-s" . swiper)
+  :config
+  (setq ivy-use-virtual-buffers t
+	ivy-count-format "(%d/%d) ")
+  (ivy-mode 1))
+
+(use-package counsel
+  :ensure t
+  :config (counsel-mode 1))
+
+(use-package swiper
+  :ensure t)
