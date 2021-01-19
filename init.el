@@ -130,3 +130,9 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook))
+
+(use-package projectile
+  :ensure t
+  :bind (:map projectile-mode-map
+	      ("C-c p" . projectile-command-map))
+  :config (projectile-mode))
