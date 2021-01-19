@@ -125,3 +125,8 @@
 
 (use-package swiper
   :ensure t)
+
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
