@@ -136,3 +136,7 @@
   :bind-keymap ("C-c p" . projectile-command-map)
   :custom ((projectile-completion-system 'ivy))
   :config (projectile-mode))
+
+(use-package ivy-rich
+  :init
+  (ivy-rich-mode 1))
