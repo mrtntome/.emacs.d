@@ -140,3 +140,6 @@
 (use-package ivy-rich
   :init
   (ivy-rich-mode 1))
+
+(use-package magit
+  :ensure t)
