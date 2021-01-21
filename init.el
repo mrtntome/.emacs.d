@@ -13,14 +13,13 @@
 ;; Set Default Font
 (set-face-attribute 'default nil
                     :family "Source Code Pro"
-                    :height 110
+                    :height 125
                     :weight 'normal
                     :width 'normal)
 
 ;; Quality of Life Improvements
 (column-number-mode)
 (setq word-wrap t)
-(setq initial-major-mode 'org-mode)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (setq custom-file (concat user-emacs-directory "/custom.el"))
 (load-file custom-file)
@@ -54,6 +53,7 @@
 ;; Package Manager
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
+			 ("org" . "https://orgmode.org/elpa/")
                          ("elpa" . "https://elpa.gnu.org/packages/")))
 (package-initialize)
 (unless package-archive-contents
@@ -65,6 +65,8 @@
 
 (require 'use-package)
 (setq use-package-always-ensure t)
+
+(setq initial-major-mode 'org-mode)
 
 ;; packages
 (use-package try
@@ -143,6 +145,12 @@
 
 (use-package magit
   :ensure t)
+
+(use-package org
+  :ensure org-plus-contrib
+  :pin org
+  :config (setq org-ellipsis " ↴"))
+
 
 (use-package ox-hugo
   :ensure t
