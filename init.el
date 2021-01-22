@@ -151,7 +151,9 @@
   :pin org
   :config (setq org-ellipsis " ↴"))
 
-
 (use-package ox-hugo
   :ensure t
   :after ox)
+
+(use-package nix-mode
+  :mode "\\.nix\\'")
