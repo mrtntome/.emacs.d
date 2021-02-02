@@ -149,7 +149,10 @@
 (use-package org
   :ensure org-plus-contrib
   :pin org
-  :config (setq org-ellipsis " ↴"))
+  :config (setq org-ellipsis " ↴"
+		org-hide-emphasis-markers t
+		org-agenda-files '("~/Documents/org/birthdays.org"
+				   "~/Documents/org/meetings.org")))
 
 (use-package ox-hugo
   :ensure t
