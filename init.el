@@ -152,7 +152,13 @@
   :config (setq org-ellipsis " ↴"
 		org-hide-emphasis-markers t
 		org-agenda-files '("~/Documents/org/birthdays.org"
-				   "~/Documents/org/meetings.org")))
+				   "~/Documents/org/meetings.org"))
+  (global-set-key (kbd "C-c l") 'org-store-link)
+  (global-set-key (kbd "C-c a") 'org-agenda)
+  (global-set-key (kbd "C-c c") 'org-capture)
+  (setq org-special-ctrl-a/e t
+	org-special-ctrl-k t))
+
 
 (use-package ox-hugo
   :ensure t
