@@ -147,6 +147,12 @@
 (use-package magit
   :ensure t)
 
+(use-package plantuml-mode
+  :ensure t
+  :config (setq plantuml-default-exec-mode 'jar
+		plantuml-jar-path "/usr/share/java/plantuml.jar"
+		org-plantuml-jar-path "/usr/share/java/plantuml.jar"))
+
 (use-package org
   :ensure org-plus-contrib
   :pin org
