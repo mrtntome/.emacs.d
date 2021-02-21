@@ -23,6 +23,7 @@
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (setq custom-file (concat user-emacs-directory "/custom.el"))
 (load-file custom-file)
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Line Numbers
 (require 'display-line-numbers)
