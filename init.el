@@ -164,8 +164,17 @@
   (global-set-key (kbd "C-c a") 'org-agenda)
   (global-set-key (kbd "C-c c") 'org-capture)
   (setq org-special-ctrl-a/e t
-	org-special-ctrl-k t))
-
+	org-special-ctrl-k t)
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (python . t)
+     (plantuml . t)))
+  (setq org-confirm-babel-evaluate nil)
+  (require 'org-tempo)
+  (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+  (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+  (add-to-list 'org-structure-template-alist '("py" . "src python")))
 
 (use-package ox-hugo
   :ensure t
