@@ -182,3 +182,17 @@
 
 (use-package nix-mode
   :mode "\\.nix\\'")
+
+(use-package elfeed
+  :ensure t
+  :config (setq elfeed-feeds
+		'(("https://planet.emacslife.com/atom.xml" blog emacs)
+		  ("https://xkcd.com/atom.xml" webcomic)
+		  ("https://what-if.xkcd.com/feed.atom" webcomic)
+		  ("https://www.smbc-comics.com/comic/rss" webcomic)
+		  ("https://cestlaz.github.io/rss.xml" blog emacs)
+		  ("https://protesilaos.com/codelog.xml" blog emacs)
+		  ("https://www.youtube.com/feeds/videos.xml?channel_id=UCAiiOTio8Yu69c3XnR7nQB" youtube)
+		  ("https://lexfridman.com/feed/podcast/" podcast)
+		  ("www.jeffgeerling.com/blog.xml" blog tech)))
+  :bind ("C-x w" . elfeed))
