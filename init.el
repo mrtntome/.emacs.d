@@ -191,7 +191,14 @@
 		  ("https://protesilaos.com/codelog.xml" blog emacs)
 		  ("https://www.youtube.com/feeds/videos.xml?channel_id=UCAiiOTio8Yu69c3XnR7nQB" youtube)
 		  ("https://lexfridman.com/feed/podcast/" podcast)
-		  ("www.jeffgeerling.com/blog.xml" blog tech)))
+		  ("www.jeffgeerling.com/blog.xml" blog tech)
+		  ("www.aaronsw.com/2002/feeds/pgessays.rss" blog tech)
+		  ("news.ycombinator.com/rss" news tech)
+		  ("pragmaticemacs.com/feed/" blog emacs)
+		  ("http://feeds.bbci.co.uk/news/world/rss.xml" news world)
+		  ("http://feeds.bbci.co.uk/news/health/rss.xml" news health)
+		  ("http://feeds.bbci.co.uk/news/science_and_environment/rss.xml" news science environment)
+		  ("http://feeds.bbci.co.uk/news/technology/rss.xml" news tech)))
   :bind ("C-x w" . elfeed))
 
 (use-package olivetti
