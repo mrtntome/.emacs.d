@@ -180,9 +180,6 @@
   :ensure t
   :after ox)
 
-(use-package nix-mode
-  :mode "\\.nix\\'")
-
 (use-package elfeed
   :ensure t
   :config (setq elfeed-feeds
