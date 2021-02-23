@@ -27,7 +27,7 @@
 
 ;; Line Numbers
 (require 'display-line-numbers)
-(defcustom display-line-numbers-exempt-modes '(org-mode vterm-mode eshell-mode shell-mode term-mode ansi-term-mode)
+(defcustom display-line-numbers-exempt-modes '(org-mode vterm-mode eshell-mode shell-mode term-mode ansi-term-mode elfeed-show-mode)
   "Major modes on which to disable line numbers"
   :group 'display-line-numbers
   :type 'list
@@ -193,3 +193,7 @@
 		  ("https://lexfridman.com/feed/podcast/" podcast)
 		  ("www.jeffgeerling.com/blog.xml" blog tech)))
   :bind ("C-x w" . elfeed))
+
+(use-package olivetti
+  :ensure t
+  :hook (elfeed-show-mode . olivetti-mode))
