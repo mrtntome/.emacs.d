@@ -27,7 +27,7 @@
 
 ;; Line Numbers
 (require 'display-line-numbers)
-(defcustom display-line-numbers-exempt-modes '(org-mode vterm-mode eshell-mode shell-mode term-mode ansi-term-mode elfeed-show-mode)
+(defcustom display-line-numbers-exempt-modes '(org-mode vterm-mode eshell-mode shell-mode term-mode ansi-term-mode elfeed-show-mode eww-mode)
   "Major modes on which to disable line numbers"
   :group 'display-line-numbers
   :type 'list
