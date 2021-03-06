@@ -192,5 +192,5 @@
 
 (use-package olivetti
   :ensure t
-  :config (setq olivetti-body-width 80)
+  :config (setq olivetti-body-width 90)
   :hook (elfeed-show-mode . olivetti-mode))
