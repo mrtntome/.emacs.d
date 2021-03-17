@@ -164,6 +164,7 @@
   (global-set-key (kbd "C-c l") 'org-store-link)
   (global-set-key (kbd "C-c a") 'org-agenda)
   (global-set-key (kbd "C-c c") 'org-capture)
+
   (setq org-special-ctrl-a/e t
 	org-special-ctrl-k t)
   (org-babel-do-load-languages
@@ -172,10 +173,17 @@
      (python . t)
      (plantuml . t)))
   (setq org-confirm-babel-evaluate nil)
+
   (require 'org-tempo)
   (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
   (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
-  (add-to-list 'org-structure-template-alist '("py" . "src python")))
+  (add-to-list 'org-structure-template-alist '("py" . "src python"))
+
+  (require 'ox-latex)
+  (add-to-list 'org-latex-classes
+		       '("moderncv"
+			 "\\documentclass[11pt, a4paper]{moderncv}"
+			 ("\\section{%s}" . "\\section*{%s}"))))
 
 (use-package ox-hugo
   :ensure t
