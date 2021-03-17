@@ -102,6 +102,7 @@
 
 (use-package smartparens
   :ensure t
+  :init (require 'smartparens-config)
   :hook (prog-mode . smartparens-mode))
 
 (use-package yaml-mode
