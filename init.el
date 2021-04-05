@@ -88,17 +88,14 @@
 (use-package all-the-icons
   :ensure t)
 
-(use-package doom-modeline
+(use-package mood-line
   :ensure t
-  :hook (after-init . doom-modeline-mode))
+  :hook (after-init . mood-line-mode))
 
-(use-package doom-themes
+(use-package weyland-yutani-theme
   :ensure t
   :config
-  (setq doom-themes-enable-bold t
-	doom-themes-enable-italic t)
-  (load-theme 'doom-one t)
-  (doom-themes-org-config))
+  (load-theme 'weyland-yutani t))
 
 (use-package smartparens
   :ensure t
