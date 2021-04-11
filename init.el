@@ -200,3 +200,7 @@
   :ensure t
   :config (setq olivetti-body-width 90)
   :hook (elfeed-show-mode . olivetti-mode))
+
+(use-package all-the-icons-dired
+  :ensure t
+  :config (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
