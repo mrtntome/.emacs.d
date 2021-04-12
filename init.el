@@ -203,7 +203,8 @@
 
 (use-package all-the-icons-dired
   :ensure t
-  :config (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+  :config (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+  (setq all-the-icons-dired-monochrome nil))
 
 (use-package dired
   :ensure nil
