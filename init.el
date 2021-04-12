@@ -204,3 +204,10 @@
 (use-package all-the-icons-dired
   :ensure t
   :config (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+
+(use-package dired
+  :ensure nil
+  :config
+  (setq dired-listing-switches "-lAh --group-directories-first")
+  (add-hook 'dired-mode-hook 'dired-hide-details-mode)
+  (define-key dired-mode-map "b" 'dired-up-directory))
