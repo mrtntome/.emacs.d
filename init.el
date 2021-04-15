@@ -212,3 +212,13 @@
   (setq dired-listing-switches "-lAh --group-directories-first")
   (add-hook 'dired-mode-hook 'dired-hide-details-mode)
   (define-key dired-mode-map "b" 'dired-up-directory))
+
+(use-package helpful
+  :ensure t
+  :bind
+  ("C-c C-d" . #'helpful-at-point)
+  ("C-h k" . #'helpful-key)
+  :config
+  (setq counsel-describe-function-function #'helpful-callable
+	counsel-describe-variable-function #'helpful-variable
+	counsel-describe-symbol-function #'helpful-symbol))
