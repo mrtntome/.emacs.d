@@ -186,16 +186,6 @@
   :ensure t
   :after ox)
 
-(use-package elfeed
-  :ensure t
-  :config (setq elfeed-db-directory "~/.local/share/elfeed")
-  :bind ("C-x w" . elfeed))
-
-(use-package elfeed-org
-  :ensure t
-  :config (setq rmh-elfeed-org-files (list "~/Documents/org/feeds.org"))
-  (elfeed-org))
-
 (use-package olivetti
   :ensure t
   :config (setq olivetti-body-width 90)
