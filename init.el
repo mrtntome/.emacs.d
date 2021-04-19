@@ -156,8 +156,7 @@
   :pin org
   :config (setq org-ellipsis " ↴"
 		org-hide-emphasis-markers t
-		org-agenda-files '("~/Documents/org/birthdays.org"
-				   "~/Documents/org/meetings.org"))
+		org-agenda-files '())
   (global-set-key (kbd "C-c l") 'org-store-link)
   (global-set-key (kbd "C-c a") 'org-agenda)
   (global-set-key (kbd "C-c c") 'org-capture)
