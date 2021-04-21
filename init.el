@@ -105,6 +105,9 @@
 (use-package yaml-mode
   :ensure t)
 
+(use-package vterm
+  :ensure t)
+
 (use-package rainbow-delimiters
   :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
