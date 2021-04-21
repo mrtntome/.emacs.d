@@ -106,7 +106,9 @@
   :ensure t)
 
 (use-package vterm
-  :ensure t)
+  :ensure t
+  :config
+  (setq vterm-module-cmake-args "-DUSE_SYSTEM_LIBVTERM=no"))
 
 (use-package rainbow-delimiters
   :ensure t
