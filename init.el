@@ -213,3 +213,9 @@
   (setq counsel-describe-function-function #'helpful-callable
 	counsel-describe-variable-function #'helpful-variable
 	counsel-describe-symbol-function #'helpful-symbol))
+
+(use-package avy
+  :ensure t
+  :bind
+  ("C-:" . 'avy-goto-char)
+  ("C-'" . 'avy-goto-char-2))
