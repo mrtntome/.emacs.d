@@ -159,7 +159,7 @@
   :config (setq org-ellipsis " ↴"
 		org-hide-emphasis-markers t
 		org-agenda-files '())
-  (global-set-key (kbd "C-c l") 'org-store-link)
+  (global-set-key (kbd "C-c s") 'org-store-link)
   (global-set-key (kbd "C-c a") 'org-agenda)
   (global-set-key (kbd "C-c c") 'org-capture)
 
@@ -213,6 +213,9 @@
   (setq counsel-describe-function-function #'helpful-callable
 	counsel-describe-variable-function #'helpful-variable
 	counsel-describe-symbol-function #'helpful-symbol))
+
+(use-package eglot
+  :ensure t)
 
 (use-package avy
   :ensure t
